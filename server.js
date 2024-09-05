@@ -31,7 +31,7 @@ app.post('/send-email', (req, res) => {
 
   let mailOptions = {
     from: `"CabCeylon" <${process.env.MAIL_FROM_ADDRESS}>`, 
-    to: [to,'cabceylon02@gmail.com'], 
+    to: [to,'info@cabceylon.com'], 
     subject: 'CabCeylon Vehicle Booking',
     html: html,
   };
