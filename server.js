@@ -12,11 +12,14 @@ app.use(cors());
 let transporter = nodemailer.createTransport({
   host: process.env.MAIL_HOST,
   port: process.env.MAIL_PORT,
-  secure: true,
+  secure: false,
   auth: {
     user: process.env.MAIL_USERNAME, 
     pass: process.env.MAIL_PASSWORD,
   },
+  tls: {
+    rejectUnauthorized: false // optionally, this can help with self-signed certificates
+  }
 });
 
 app.post('/send-email', (req, res) => {
